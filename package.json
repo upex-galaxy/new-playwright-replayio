@@ -1,0 +1,25 @@
+{
+  "name": "new-playwright-replayio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project replay-chromium",
+    "init:replay": "replay metadata --init --keys source --warn",
+    "upload:replay": "ts-node replayio.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.46.0",
+    "@replayio/playwright": "^3.1.8",
+    "@replayio/replay": "^0.22.12",
+    "@types/node": "^22.2.0",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ESNext",
+		"esModuleInterop": true,
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"strict": true,
+		"strictPropertyInitialization": true,
+		"noUnusedLocals": true,
+		"verbatimModuleSyntax": true,
+        "forceConsistentCasingInFileNames": true,
+		"types": ["node"],
+		"baseUrl": ".",
+		"paths": {
+			"@pages/*": ["./tests/pages/*"],
+			"@helper/*": ["./tests/helper/*"],
+			"@data/*": ["./tests/data/*"],
+			"@type/*": ["./tests/interfaces/*"],
+			"@api/*": ["./tests/apis/*"],
+			"@TestBase": ["./tests/pages/TestBase.ts"],
+			"@playwrightConfig": ["./playwright.config.ts"]
+		}
+	},
+    "ts-node": {
+        "esm": true, // «———— to run TS files with command `ts-node`
+    },
+    "include": ["./tests/**/*.ts", "playwright.config.ts", "replayio.ts"],
+	"exclude": ["node_modules"]
+}
