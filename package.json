@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project replay-chromium",
-    "init:replay": "replay metadata --init --keys source --warn",
-    "upload:replay": "ts-node replayio.ts"
+    "test": "npx playwright test --project replay-chromium"
   },
   "keywords": [],
   "author": "",
