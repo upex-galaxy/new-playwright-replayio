@@ -3,6 +3,9 @@ on:
   push:
   workflow_dispatch:
 
+env:
+  REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+
 jobs:
   playwright-replayio:
     runs-on: ubuntu-22.04
@@ -19,11 +22,11 @@ jobs:
     - name: Run Playwright tests
       run: npm test
       env:
-        REPLAY_API_KEY: ${{ secrets.REPLAY_API_KEY }}
+        REPLAY_API_KEY: ${{ env.REPLAY_API_KEY }}
 
     - name: Upload replays
       if: always()
       uses: replayio/action-upload@v0.5.1
       with:
-        api-key: ${{ secrets.REPLAY_API_KEY }}
+        api-key: ${{ env.REPLAY_API_KEY }}
         public: true
